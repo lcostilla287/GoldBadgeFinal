@@ -65,5 +65,17 @@ namespace Challenge_1.Repository
                 return false;
             }
         }
+
+        //I want to give an indication later when the item is successfully deleted
+        public bool DeleteExistingMenuItem(int menuItemNumber)
+        {
+            MenuItem menuItemToDelete = GetMenuItemByNumber(menuItemNumber);
+            if (menuItemToDelete != null)
+            {
+                _menuItemsDirectory.Remove(menuItemToDelete);
+                return true;
+            }
+            else return false;
+        }
     }
 }
