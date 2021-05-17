@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Challenge_1.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace Challenge_1.ProgramUI
 {
     public class ProgramUI
     {
+        private MenuRepo _repo = new MenuRepo();
+
+        public void Run()
+        {
+            Menu();
+        }
     }
 }
