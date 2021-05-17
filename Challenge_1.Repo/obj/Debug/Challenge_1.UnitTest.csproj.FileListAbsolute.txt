@@ -12,3 +12,5 @@ C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_1.Repo\obj\Debug\Cha
 C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_1.Repo\obj\Debug\Challenge_1.UnitTest.csproj.CopyComplete
 C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_1.Repo\obj\Debug\Challenge_1.Repo.dll
 C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_1.Repo\obj\Debug\Challenge_1.Repo.pdb
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_1.Repo\bin\Debug\Challenge_1.Repository.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_1.Repo\bin\Debug\Challenge_1.Repository.pdb
