@@ -53,6 +53,7 @@ namespace Challenge_1.ProgramUI
                         break;
                     case "6":
                         keeprunning = false;
+                        break;
                     default:
                         Console.WriteLine("Please select a valid menu option");
                         break;
@@ -157,6 +158,18 @@ namespace Challenge_1.ProgramUI
             else Console.WriteLine("The menu item could not be updated");
         }
 
+        private void DeleteExistingMenuItem()
+        {
+            Console.Clear();
+            DisplayAllMenuItems();
+            Console.WriteLine("Please select a menu item number to delete");
 
+            bool wasDeleted = _repo.DeleteExistingMenuItem(Convert.ToInt32(Console.ReadLine()));
+            if (wasDeleted)
+            {
+                Console.WriteLine("The menu item was successfully deleted");
+            }
+            else Console.WriteLine("The menu item could not be deleted");
+        }
     }
 }
