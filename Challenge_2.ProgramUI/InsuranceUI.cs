@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenge_2.Repo
+namespace Challenge_2.ProgramUI
 {
-    public class Class1
+    class InsuranceUI
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Challenge_2.Repo
 {
     public enum ClaimType { Car, Home, Theft}
-    class InsuranceClaim
+    public class InsuranceClaim
     {
         public int ClaimID { get; set; }
         public ClaimType ClaimType { get; set; }
