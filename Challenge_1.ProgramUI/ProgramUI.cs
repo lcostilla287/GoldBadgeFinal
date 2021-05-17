@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenge_1.Repository
+namespace Challenge_1.ProgramUI
 {
-    public class Class1
+    public class ProgramUI
     {
     }
 }
