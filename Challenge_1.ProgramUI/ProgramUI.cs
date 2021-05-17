@@ -18,8 +18,8 @@ namespace Challenge_1.ProgramUI
 
         private void Menu()
         {
-            bool keeprunning = true;
-            while (keeprunning)
+            bool keepRunning = true;
+            while (keepRunning)
             {
                 Console.Clear();
                 Console.WriteLine("Welcome\n" +
@@ -53,7 +53,7 @@ namespace Challenge_1.ProgramUI
                         DeleteExistingMenuItemByItemNumber();
                         break;
                     case "6":
-                        keeprunning = false;
+                        keepRunning = false;
                         break;
                     default:
                         Console.WriteLine("Please select a valid menu option");
