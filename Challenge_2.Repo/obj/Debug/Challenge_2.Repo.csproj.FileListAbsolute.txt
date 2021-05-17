@@ -1,0 +1,6 @@
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.Repo\bin\Debug\Challenge_2.Repo.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.Repo\bin\Debug\Challenge_2.Repo.pdb
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.Repo\obj\Debug\Challenge_2.Repo.csprojAssemblyReference.cache
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.Repo\obj\Debug\Challenge_2.Repo.csproj.CoreCompileInputs.cache
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.Repo\obj\Debug\Challenge_2.Repo.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.Repo\obj\Debug\Challenge_2.Repo.pdb

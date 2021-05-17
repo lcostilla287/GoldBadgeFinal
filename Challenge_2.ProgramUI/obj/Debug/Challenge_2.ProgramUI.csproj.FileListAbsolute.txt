@@ -1,0 +1,10 @@
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\bin\Debug\Challenge_2.ProgramUI.exe.config
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\bin\Debug\Challenge_2.ProgramUI.exe
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\bin\Debug\Challenge_2.ProgramUI.pdb
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\bin\Debug\Challenge_2.Repo.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\bin\Debug\Challenge_2.Repo.pdb
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\obj\Debug\Challenge_2.ProgramUI.csprojAssemblyReference.cache
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\obj\Debug\Challenge_2.ProgramUI.csproj.CoreCompileInputs.cache
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\obj\Debug\Challenge_2.ProgramUI.csproj.CopyComplete
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\obj\Debug\Challenge_2.ProgramUI.exe
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_2.ProgramUI\obj\Debug\Challenge_2.ProgramUI.pdb
