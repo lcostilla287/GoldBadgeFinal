@@ -65,7 +65,30 @@ namespace Challenge_1.ProgramUI
             Console.Clear();
             MenuItem newMenuItem = new MenuItem();
 
-            Console.WriteLine("Please enter a new meal number");
+            Console.WriteLine("Please enter a new meal number:");
+            newMenuItem.MealNumber = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("What is the name of the meal?");
+            newMenuItem.MealName = Console.ReadLine();
+
+            Console.WriteLine("Please enter a description of the meal:");
+            newMenuItem.Description = Console.ReadLine();
+
+            Console.WriteLine("Please enter the ingredients of the meal:");
+            newMenuItem.IngredientList = Console.ReadLine();
+
+            Console.WriteLine("Finally, enter the price of the meal:");
+            newMenuItem.MealPrice = Convert.ToDouble(Console.ReadLine());
+
+            bool wasAddedCorrectly = _repo.AddMenuItemToDirectory(newMenuItem);
+            if (wasAddedCorrectly)
+            {
+                Console.WriteLine("The new menu item was added successfully!");
+            }
+            else
+            {
+                Console.WriteLine("The new menu item could not be added. Please try again.");
+            }
         }
     }
 }
