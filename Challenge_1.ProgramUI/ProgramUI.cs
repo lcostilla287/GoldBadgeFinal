@@ -123,5 +123,40 @@ namespace Challenge_1.ProgramUI
             }
             else Console.WriteLine("There is no menu item by that number");
         }
+
+        private void UpdateExistingMenuItem()
+        {
+            Console.Clear();
+            DisplayAllMenuItems();
+            Console.WriteLine("Please enter the menu number of the menu item that you would like to update.");
+
+            int menuNumber = Convert.ToInt32(Console.ReadLine());
+
+            MenuItem updateMenuItem = new MenuItem();
+
+            Console.WriteLine("Please enter a new menu number");
+            updateMenuItem.MealNumber = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the name of the meal");
+            updateMenuItem.MealName = Console.ReadLine();
+
+            Console.WriteLine("Please enter a meal description");
+            updateMenuItem.Description = Console.ReadLine();
+
+            Console.WriteLine("Please enter the ingredient of the meal");
+            updateMenuItem.IngredientList = Console.ReadLine();
+
+            Console.WriteLine("Finally, enter the price of the updated meal");
+            updateMenuItem.MealPrice = Convert.ToDouble(Console.ReadLine());
+
+            bool wasUpdated = _repo.UpdateExistingMenuItem(menuNumber, updateMenuItem);
+            if (wasUpdated)
+            {
+                Console.WriteLine("The menu item was successfully updated");
+            }
+            else Console.WriteLine("The menu item could not be updated");
+        }
+
+
     }
 }
