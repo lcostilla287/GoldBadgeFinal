@@ -106,5 +106,22 @@ namespace Challenge_1.ProgramUI
             }
             else Console.WriteLine("There are no menu items to display");
         }
+
+        private void DisplayMenuItemByNumber()
+        {
+            Console.Clear();
+            Console.WriteLine("What menu item number would you like to view?");
+
+            MenuItem menuItemToDisplay = _repo.GetMenuItemByNumber(Convert.ToInt32(Console.ReadLine()));
+            if (menuItemToDisplay != null)
+            {
+                Console.WriteLine($"Menu Number: {menuItemToDisplay.MealNumber}\n" +
+                    $"{menuItemToDisplay.MealName}\n" +
+                    $"Description: {menuItemToDisplay.Description}\n" +
+                    $"Ingredients: {menuItemToDisplay.IngredientList}\n" +
+                    $"Price: {menuItemToDisplay.MealPrice}");
+            }
+            else Console.WriteLine("There is no menu item by that number");
+        }
     }
 }
