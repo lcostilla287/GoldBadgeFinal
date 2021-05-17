@@ -90,5 +90,21 @@ namespace Challenge_1.ProgramUI
                 Console.WriteLine("The new menu item could not be added. Please try again.");
             }
         }
+
+        private void DisplayAllMenuItems()
+        {
+            Console.Clear();
+            List<MenuItem> allMenuItems = _repo.GetMenuItems();
+            if (allMenuItems != null)
+            {
+                foreach (MenuItem menuItem in allMenuItems)
+                {
+                    Console.WriteLine($"Menu Number: {menuItem.MealNumber}\n" +
+                        $"{menuItem.MealName}\n" +
+                        $"Price: {menuItem.MealPrice}");
+                }
+            }
+            else Console.WriteLine("There are no menu items to display");
+        }
     }
 }
