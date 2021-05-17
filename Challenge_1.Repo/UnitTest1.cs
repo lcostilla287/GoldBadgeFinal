@@ -61,7 +61,7 @@ namespace Challenge_1.Repo
         [TestMethod]
         public void DeleteExistingMenuItem_ShouldReturnTrue()
         {
-            bool wasDeleted = _repo.DeleteExistingMenuItem(2);
+            bool wasDeleted = _repo.DeleteExistingMenuItemByItemNumber(2);
 
             Assert.IsTrue(wasDeleted);
         }

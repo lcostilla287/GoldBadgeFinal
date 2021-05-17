@@ -50,7 +50,7 @@ namespace Challenge_1.ProgramUI
                         UpdateExistingMenuItem();
                         break;
                     case "5":
-                        DeleteExistingMenuItem();
+                        DeleteExistingMenuItemByItemNumber();
                         break;
                     case "6":
                         keeprunning = false;
@@ -180,7 +180,7 @@ namespace Challenge_1.ProgramUI
             Console.ReadKey();
         }
 
-        private void DeleteExistingMenuItem()
+        private void DeleteExistingMenuItemByItemNumber()
         {
             Console.Clear();
             List<MenuItem> allMenuItems = _repo.GetMenuItems();
@@ -189,7 +189,7 @@ namespace Challenge_1.ProgramUI
                 DisplayAllMenuItems();
                 Console.WriteLine("Please select a menu item number to delete");
 
-                bool wasDeleted = _repo.DeleteExistingMenuItem(Convert.ToInt32(Console.ReadLine()));
+                bool wasDeleted = _repo.DeleteExistingMenuItemByItemNumber(Convert.ToInt32(Console.ReadLine()));
                 if (wasDeleted)
                 {
                     Console.WriteLine("The menu item was successfully deleted");

@@ -67,7 +67,7 @@ namespace Challenge_1.Repository
         }
 
         //I want to give an indication later when the item is successfully deleted
-        public bool DeleteExistingMenuItem(int menuItemNumber)
+        public bool DeleteExistingMenuItemByItemNumber(int menuItemNumber)
         {
             MenuItem menuItemToDelete = GetMenuItemByNumber(menuItemNumber);
             if (menuItemToDelete != null)
