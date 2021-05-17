@@ -62,7 +62,7 @@ namespace Challenge_2.ProgramUI
             Queue<InsuranceClaim> claimQueue = _repo.GetInsuranceClaims();
             foreach(InsuranceClaim claims in claimQueue)
             {
-                Console.WriteLine(String.Format("{0,-10} {1,-9} {2,-15} {3,-10} {4,-15} {5,-14} {6,-10}", claims.ClaimID, claims.ClaimType, claims.Description, claims.ClaimAmount, claims.DateOfIncident, claims.DateOfClaim, claims.IsValid));
+                Console.WriteLine(String.Format("{0,-10} {1,-9} {2,-15} {3,-10} {4,-15:MM/dd/yy} {5,-14:MM/dd/yy} {6,-10}", claims.ClaimID, claims.ClaimType, claims.Description, claims.ClaimAmount, claims.DateOfIncident, claims.DateOfClaim, claims.IsValid));
             }
             Console.ReadKey();
         }
@@ -107,8 +107,28 @@ namespace Challenge_2.ProgramUI
         private void EnterANewClaim()
         {
             Console.Clear();
+            InsuranceClaim newInsuranceClaim = new InsuranceClaim();
 
+            //did a little research here to have the input on the same line and convert the string into and enum. sorry for all of the one liners
+            Console.WriteLine($"Enter the claim id: {newInsuranceClaim.ClaimID = Convert.ToInt32(Console.ReadLine())}");
+            Console.WriteLine(" ");
+            Console.WriteLine($"Enter the claim type: {newInsuranceClaim.ClaimType = (ClaimType)Enum.Parse(typeof(ClaimType), Console.ReadLine())}");
+            Console.WriteLine(" ");
+            Console.WriteLine($"Enter a claim description: {newInsuranceClaim.Description = Console.ReadLine()}");
+            Console.WriteLine(" ");
+            Console.WriteLine($"Amount of Damage: ${newInsuranceClaim.ClaimAmount = Convert.ToDouble(Console.ReadLine())}");
+            Console.WriteLine(" ");
 
+            Console.WriteLine($"Date of Accident(mm/dd/yyyy): {newInsuranceClaim.DateOfIncident = DateTime.Parse(Console.ReadLine())}");
+            Console.WriteLine(" ");
+            Console.WriteLine($"Date of Claim(mm/dd/yyyy): {newInsuranceClaim.DateOfClaim = DateTime.Parse(Console.ReadLine())}");
+
+            if (newInsuranceClaim.IsValid)
+            {
+                Console.WriteLine("The claim is valid");
+            }
+            else Console.WriteLine("The claim is invalid");
+            
         }
 
         private void HelpHandleClaim()
