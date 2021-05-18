@@ -97,6 +97,9 @@ namespace Challenge_2.ProgramUI
                 case "y":
                     HelpHandleClaim();
                     break;
+                case "n":
+                    Menu();
+                    break;
                 default:
                     Menu();
                     break;
@@ -108,20 +111,25 @@ namespace Challenge_2.ProgramUI
         {
             Console.Clear();
             InsuranceClaim newInsuranceClaim = new InsuranceClaim();
-
+            //use consolewrite instead of writeline
             //did a little research here to have the input on the same line and convert the string into and enum. sorry for all of the one liners
-            Console.WriteLine($"Enter the claim id: {newInsuranceClaim.ClaimID = Convert.ToInt32(Console.ReadLine())}");
-            Console.WriteLine(" ");
-            Console.WriteLine($"Enter the claim type: {newInsuranceClaim.ClaimType = (ClaimType)Enum.Parse(typeof(ClaimType), Console.ReadLine())}");
-            Console.WriteLine(" ");
-            Console.WriteLine($"Enter a claim description: {newInsuranceClaim.Description = Console.ReadLine()}");
-            Console.WriteLine(" ");
-            Console.WriteLine($"Amount of Damage: ${newInsuranceClaim.ClaimAmount = Convert.ToDouble(Console.ReadLine())}");
-            Console.WriteLine(" ");
+            Console.Write("Enter the claim id: ");
+            newInsuranceClaim.ClaimID = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"Date of Accident(mm/dd/yyyy): {newInsuranceClaim.DateOfIncident = DateTime.Parse(Console.ReadLine())}");
-            Console.WriteLine(" ");
-            Console.WriteLine($"Date of Claim(mm/dd/yyyy): {newInsuranceClaim.DateOfClaim = DateTime.Parse(Console.ReadLine())}");
+            Console.Write("Enter the claim type: ");
+            newInsuranceClaim.ClaimType = (ClaimType)Enum.Parse(typeof(ClaimType), Console.ReadLine());
+
+            Console.Write("Enter a claim description: ");
+            newInsuranceClaim.Description = Console.ReadLine();
+
+            Console.Write("Amount of Damage: $");
+            newInsuranceClaim.ClaimAmount = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Date of Accident(mm/dd/yyyy): ");
+            newInsuranceClaim.DateOfIncident = DateTime.Parse(Console.ReadLine());
+
+            Console.Write("Date of Claim(mm/dd/yyyy): ");
+            newInsuranceClaim.DateOfClaim = DateTime.Parse(Console.ReadLine());
 
             if (newInsuranceClaim.IsValid)
             {

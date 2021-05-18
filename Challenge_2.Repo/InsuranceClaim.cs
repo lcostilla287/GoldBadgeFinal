@@ -19,8 +19,8 @@ namespace Challenge_2.Repo
         { 
             get 
             {
-                int span = DateOfClaim.Day - DateOfIncident.Day;
-                if (span <= 30)
+                TimeSpan span = DateOfClaim - DateOfIncident;
+                if (span.TotalDays <= 30)
                 {
                     return true;
                 }
