@@ -10,7 +10,7 @@ namespace Challenge_2.Repository
     public class BadgesRepo
     {
         private readonly Dictionary<int, string[]> _badges = new Dictionary<int, string[]>();
-
+        
         //Create
         public bool AddBadgeToDictionary(Badges newBadge)
         {
@@ -42,5 +42,14 @@ namespace Challenge_2.Repository
         }
 
         //Update
+        public bool AddDoorToBadge(int badgeID, Badges doorToBadge)
+        {
+            Dictionary<int, string []> oldbadge = GetBadgeValuePairsByBadgeID(badgeID);
+
+            if (oldbadge != null)
+            {
+                string[]{ doorToBadge};
+            }
+        }
     }
 }
