@@ -8,7 +8,7 @@ namespace Challenge_2.Repo
 {
     public class InsuranceClaimRepo
     {
-        Queue<InsuranceClaim> _insuranceClaims = new Queue<InsuranceClaim>();
+        private readonly Queue<InsuranceClaim> _insuranceClaims = new Queue<InsuranceClaim>();
 
         //Create
         public bool AddInsuranceClaimToQueue(InsuranceClaim newInsuraceClaim)
