@@ -12,6 +12,7 @@ namespace Challenge_2.ProgramUI
         private InsuranceClaimRepo _repo = new InsuranceClaimRepo();
         public void Run()
         {
+            SeedContentList();
             Menu();
         }
 
@@ -160,6 +161,54 @@ namespace Challenge_2.ProgramUI
 
             Console.WriteLine("Please enter the claim ID you would like to update:");
             int ClaimIDInput = Convert.ToInt32(Console.ReadLine());
+
+            InsuranceClaim newInsuranceClaim = new InsuranceClaim();
+            
+            Console.Write("Enter the claim id: ");
+            newInsuranceClaim.ClaimID = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter the claim type: ");
+            newInsuranceClaim.ClaimType = (ClaimType)Enum.Parse(typeof(ClaimType), Console.ReadLine());
+
+            Console.Write("Enter a claim description: ");
+            newInsuranceClaim.Description = Console.ReadLine();
+
+            Console.Write("Amount of Damage: $");
+            newInsuranceClaim.ClaimAmount = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Date of Accident(mm/dd/yyyy): ");
+            newInsuranceClaim.DateOfIncident = DateTime.Parse(Console.ReadLine());
+
+            Console.Write("Date of Claim(mm/dd/yyyy): ");
+            newInsuranceClaim.DateOfClaim = DateTime.Parse(Console.ReadLine());
+
+            if (newInsuranceClaim.IsValid)
+            {
+                Console.WriteLine("The claim is valid");
+            }
+            else Console.WriteLine("The claim is invalid");
+
+            bool wasUpdated = _repo.UpdateExistingClaim(ClaimIDInput, newInsuranceClaim);
+            if (wasUpdated)
+            {
+                Console.WriteLine("The claim was successfully updated");
+            }
+            else 
+            {
+                Console.WriteLine("The claim could not be updated");
+            }
+            Console.ReadKey();
+        }
+
+        private void SeedContentList()
+        {
+            InsuranceClaim insuranceClaim1 = new InsuranceClaim(1, ClaimType.Car, "Car accident on 465.", 400.00, DateTime.Parse("4/25/18"), DateTime.Parse("4/27/18"));
+            _repo.AddInsuranceClaimToQueue(insuranceClaim1);
+
+            InsuranceClaim insuranceClaim2 = new InsuranceClaim(2, ClaimType.Home, "House fire in kitchen.", 4000.00, DateTime.Parse("4/11/18"), DateTime.Parse("4/12/18"));
+            _repo.AddInsuranceClaimToQueue(insuranceClaim2);
+
+            InsuranceClaim insuranceClaim3 = new InsuranceClaim(3, ClaimType.Theft, "Stolen pancakes.", 4.00, DateTime.Parse("4/27/18"), DateTime.Parse("6/01/18"));
         }
     }
 }
