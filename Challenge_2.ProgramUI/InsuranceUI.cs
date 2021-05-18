@@ -76,6 +76,7 @@ namespace Challenge_2.ProgramUI
         {
             Console.Clear();
             Console.WriteLine("Here is the next claim to be handled:");
+            Console.WriteLine("");
 
             Queue<InsuranceClaim> claimQueue = _repo.GetInsuranceClaims();
             InsuranceClaim firstClaim = claimQueue.Peek();
@@ -103,7 +104,6 @@ namespace Challenge_2.ProgramUI
                     HelpHandleClaim();
                     break;
                 case "n":
-                    Menu();
                     break;
                 default:
                     Console.WriteLine("Please choose a valid option");
@@ -132,18 +132,32 @@ namespace Challenge_2.ProgramUI
             Console.Write("Amount of Damage: $");
             newInsuranceClaim.ClaimAmount = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Date of Accident(mm/dd/yyyy): ");
+            Console.Write("Date of Accident(mm/dd/yy): ");
             newInsuranceClaim.DateOfIncident = DateTime.Parse(Console.ReadLine());
 
-            Console.Write("Date of Claim(mm/dd/yyyy): ");
+            Console.Write("Date of Claim(mm/dd/yy): ");
             newInsuranceClaim.DateOfClaim = DateTime.Parse(Console.ReadLine());
 
             if (newInsuranceClaim.IsValid)
             {
                 Console.WriteLine("The claim is valid");
             }
-            else Console.WriteLine("The claim is invalid");
-            
+            else 
+            { 
+                Console.WriteLine("The claim is invalid"); 
+            }
+            Console.ReadKey();
+
+            bool wasAdded = _repo.AddInsuranceClaimToQueue(newInsuranceClaim);
+            if (wasAdded)
+            {
+                Console.WriteLine("The claim was successfully added to the queue");
+            }
+            else
+            {
+                Console.WriteLine("The claim could not be added");
+            }
+            Console.ReadKey();
         }
 
         private void HelpHandleClaim()
@@ -162,9 +176,10 @@ namespace Challenge_2.ProgramUI
             Console.WriteLine("Please enter the claim ID you would like to update:");
             int ClaimIDInput = Convert.ToInt32(Console.ReadLine());
 
+            Console.Clear();
             InsuranceClaim newInsuranceClaim = new InsuranceClaim();
             
-            Console.Write("Enter the claim id: ");
+            Console.Write("Enter the new claim id: ");
             newInsuranceClaim.ClaimID = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Enter the claim type: ");
@@ -176,10 +191,10 @@ namespace Challenge_2.ProgramUI
             Console.Write("Amount of Damage: $");
             newInsuranceClaim.ClaimAmount = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Date of Accident(mm/dd/yyyy): ");
+            Console.Write("Date of Accident(mm/dd/yy): ");
             newInsuranceClaim.DateOfIncident = DateTime.Parse(Console.ReadLine());
 
-            Console.Write("Date of Claim(mm/dd/yyyy): ");
+            Console.Write("Date of Claim(mm/dd/yy): ");
             newInsuranceClaim.DateOfClaim = DateTime.Parse(Console.ReadLine());
 
             if (newInsuranceClaim.IsValid)
