@@ -8,30 +8,63 @@ namespace Challenge_2.Repo
 {
     public class InsuranceClaimRepo
     {
-        Queue<InsuranceClaim> insuranceClaims = new Queue<InsuranceClaim>();
+        Queue<InsuranceClaim> _insuranceClaims = new Queue<InsuranceClaim>();
 
         //Create
         public bool AddInsuranceClaimToQueue(InsuranceClaim newInsuraceClaim)
         {
-            int startingCount = insuranceClaims.Count;
+            int startingCount = _insuranceClaims.Count;
 
-            insuranceClaims.Enqueue(newInsuraceClaim);
+            _insuranceClaims.Enqueue(newInsuraceClaim);
 
-            bool wasAddedCorrectly = (insuranceClaims.Count > startingCount) ? true : false;
+            bool wasAddedCorrectly = (_insuranceClaims.Count > startingCount) ? true : false;
             return wasAddedCorrectly;
         }
 
         //Read
         public Queue<InsuranceClaim> GetInsuranceClaims()
         {
-            return insuranceClaims;
+            return _insuranceClaims;
         }
-        //I don't think we need an update method for this one
 
+        public InsuranceClaim GetInsuranceClaimByClaimID(int claimID)
+        {
+
+            foreach(InsuranceClaim insuranceClaim in _insuranceClaims)
+            {
+                if (insuranceClaim.ClaimID == claimID)
+                {
+                    return insuranceClaim;
+                }
+            }
+            return null;
+        }
+
+        //Update
+        public bool UpdateExistingClaim(int claimID, InsuranceClaim updatedInsuranceClaim)
+        {
+            InsuranceClaim oldInsuranceClaim = GetInsuranceClaimByClaimID(claimID);
+
+            if (oldInsuranceClaim != null)
+            {
+                oldInsuranceClaim.ClaimID = updatedInsuranceClaim.ClaimID;
+                oldInsuranceClaim.ClaimType = updatedInsuranceClaim.ClaimType;
+                oldInsuranceClaim.Description = updatedInsuranceClaim.Description;
+                oldInsuranceClaim.ClaimAmount = updatedInsuranceClaim.ClaimAmount;
+                oldInsuranceClaim.DateOfIncident = updatedInsuranceClaim.DateOfIncident;
+                oldInsuranceClaim.DateOfClaim = updatedInsuranceClaim.DateOfClaim;
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         //Delete
         public void HandleNextClaim()
         {
-            insuranceClaims.Dequeue();
+            _insuranceClaims.Dequeue();
         }
     }
 }

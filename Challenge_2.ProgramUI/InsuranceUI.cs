@@ -26,8 +26,9 @@ namespace Challenge_2.ProgramUI
                 Console.WriteLine("Select an option (1-4)\n" +
                     "1. See all claims\n" +
                     "2. Take care of the next claim\n" +
-                    "3 Enter a new claim\n" +
-                    "4. Exit");
+                    "3. Enter a new claim\n" +
+                    "4. Update a claim\n" +
+                    "5. Exit");
 
                 string input = Console.ReadLine();
 
@@ -43,6 +44,9 @@ namespace Challenge_2.ProgramUI
                         EnterANewClaim();
                         break;
                     case "4":
+                        UpdateAClaim();
+                        break;
+                    case "5":
                         keepRunning = false;
                         break;
                     default:
@@ -101,7 +105,9 @@ namespace Challenge_2.ProgramUI
                     Menu();
                     break;
                 default:
-                    Menu();
+                    Console.WriteLine("Please choose a valid option");
+                    Console.ReadKey();
+                    TakeCareOfNextClaim();
                     break;
             }
             
@@ -144,6 +150,16 @@ namespace Challenge_2.ProgramUI
             Console.WriteLine("Thanks for handling this claim!");
             _repo.HandleNextClaim();
             Console.ReadKey();
+        }
+
+        private void UpdateAClaim()
+        {
+            Console.Clear();
+            SeeAllClaims();
+            Console.WriteLine(" ");
+
+            Console.WriteLine("Please enter the claim ID you would like to update:");
+            int ClaimIDInput = Convert.ToInt32(Console.ReadLine());
         }
     }
 }

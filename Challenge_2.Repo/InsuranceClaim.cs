@@ -22,9 +22,14 @@ namespace Challenge_2.Repo
                 TimeSpan span = DateOfClaim - DateOfIncident;
                 if (span.TotalDays <= 30)
                 {
+                    Console.WriteLine("True");
                     return true;
                 }
-                else return false;
+                else 
+                {
+                    Console.WriteLine("False");
+                    return false; 
+                }
             } 
         }
 
