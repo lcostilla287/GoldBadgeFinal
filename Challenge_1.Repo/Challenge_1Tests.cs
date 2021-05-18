@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Challenge_1.Repo
 {
     [TestClass]
-    public class UnitTest1
+    public class Challenge_1Tests
     {
         [TestMethod]
         public void AddToDirectory_ShouldReturnTrue()
