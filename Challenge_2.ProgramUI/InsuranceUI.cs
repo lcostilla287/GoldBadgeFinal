@@ -81,17 +81,14 @@ namespace Challenge_2.ProgramUI
             Queue<InsuranceClaim> claimQueue = _repo.GetInsuranceClaims();
             InsuranceClaim firstClaim = claimQueue.Peek();
             Console.WriteLine($"ClaimID: {firstClaim.ClaimID}\n" +
-                $"\n" +
                 $"Type: {firstClaim.ClaimType}\n" +
-                $"\n" +
                 $"Description: {firstClaim.Description}\n" +
-                $"\n" +
-                $"Amount: {firstClaim.ClaimAmount}\n" +
-                $"\n" +
-                $"DateOfAccident: {firstClaim.DateOfIncident}\n" +
-                $"\n" +
-                $"DateOfClaim: {firstClaim.DateOfClaim}\n" +
-                $"\n" +
+                $"Amount: ${firstClaim.ClaimAmount}\n" +
+
+                //wanted the dates to be formatted nicely here
+                $"DateOfAccident: {firstClaim.DateOfIncident.ToString("MM/dd/yy")}\n" +
+                $"DateOfClaim: {firstClaim.DateOfClaim.ToString("MM/dd/yy")}\n" +
+
                 $"IsValid: {firstClaim.IsValid}\n" +
                 $" ");
             Console.WriteLine("Do want to deal with this claim now(y/n)?");
