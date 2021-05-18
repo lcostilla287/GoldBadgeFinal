@@ -10,11 +10,11 @@ namespace Challenge_3.Repository
     {
         public int BadgeID { get; set; }
 
-        public List<string> DoorNames { get; set; }
+        public string[] DoorNames { get; set; }
 
         public Badges() { }
 
-        public Badges(int badgeID, List<string> doorNames)
+        public Badges(int badgeID, string[] doorNames)
         {
             BadgeID = badgeID;
             DoorNames = doorNames;

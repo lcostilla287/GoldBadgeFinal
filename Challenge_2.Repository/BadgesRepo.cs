@@ -9,6 +9,7 @@ namespace Challenge_2.Repository
 {
     public class BadgesRepo
     {
+
         private readonly Dictionary<int, string[]> _badges = new Dictionary<int, string[]>();
         
         //Create
@@ -44,11 +45,16 @@ namespace Challenge_2.Repository
         //Update
         public bool AddDoorToBadge(int badgeID, Badges doorToBadge)
         {
-            Dictionary<int, string []> oldbadge = GetBadgeValuePairsByBadgeID(badgeID);
+            Dictionary<int, string[]> oldbadge = GetBadgeValuePairsByBadgeID(badgeID);
 
             if (oldbadge != null)
             {
-                string[]{ doorToBadge};
+                oldbadge[badgeID] = doorToBadge.DoorNames;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
