@@ -62,12 +62,12 @@ namespace Challenge_2.ProgramUI
             Console.Clear();
             Console.WriteLine("Here are all of the current claims in the queue:");
             Console.WriteLine();
-            Console.WriteLine(String.Format("{0,-10} {1,-9} {2,-15} {3,-10} {4,-15} {5,-14} {6,-10}", "ClaimID", "Type", "Description", "Amount", "DateOfAccident", "DateOfClaim", "IsValid" ));
+            Console.WriteLine(String.Format("{0,-10} {1,-9} {2,-25} {3,-13} {4,-15} {5,-14} {6,-10}", "ClaimID", "Type", "Description", "Amount", "DateOfAccident", "DateOfClaim", "IsValid" ));
 
             Queue<InsuranceClaim> claimQueue = _repo.GetInsuranceClaims();
             foreach(InsuranceClaim claims in claimQueue)
             {
-                Console.WriteLine(String.Format("{0,-10} {1,-9} {2,-15} {3,-10} {4,-15:MM/dd/yy} {5,-14:MM/dd/yy} {6,-10}", claims.ClaimID, claims.ClaimType, claims.Description, claims.ClaimAmount, claims.DateOfIncident, claims.DateOfClaim, claims.IsValid));
+                Console.WriteLine(String.Format("{0,-10} {1,-9} {2,-25} ${3,-12} {4,-15:MM/dd/yy} {5,-14:MM/dd/yy} {6,-10}", claims.ClaimID, claims.ClaimType, claims.Description, claims.ClaimAmount, claims.DateOfIncident, claims.DateOfClaim, claims.IsValid));
             }
             Console.ReadKey();
         }
@@ -209,6 +209,7 @@ namespace Challenge_2.ProgramUI
             _repo.AddInsuranceClaimToQueue(insuranceClaim2);
 
             InsuranceClaim insuranceClaim3 = new InsuranceClaim(3, ClaimType.Theft, "Stolen pancakes.", 4.00, DateTime.Parse("4/27/18"), DateTime.Parse("6/01/18"));
+            _repo.AddInsuranceClaimToQueue(insuranceClaim3);
         }
     }
 }
