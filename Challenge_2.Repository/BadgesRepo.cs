@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenge_3.Repository
+namespace Challenge_2.Repository
 {
-    public class Class1
+    public class BadgesRepo
     {
     }
 }
