@@ -52,6 +52,7 @@ namespace Challenge_2.ProgramUI
                         break;
                     default:
                         Console.WriteLine("Please select a valid menu option");
+                        Console.ReadKey();
                         break;
                 }
             }
@@ -61,7 +62,7 @@ namespace Challenge_2.ProgramUI
         {
             Console.Clear();
             Console.WriteLine("Here are all of the current claims in the queue:");
-            Console.WriteLine();
+            Console.WriteLine(" ");
             Console.WriteLine(String.Format("{0,-10} {1,-9} {2,-25} {3,-13} {4,-15} {5,-14} {6,-10}", "ClaimID", "Type", "Description", "Amount", "DateOfAccident", "DateOfClaim", "IsValid" ));
 
             Queue<InsuranceClaim> claimQueue = _repo.GetInsuranceClaims();

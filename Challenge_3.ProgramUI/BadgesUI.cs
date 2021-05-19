@@ -52,10 +52,38 @@ namespace Challenge_3.ProgramUI
                         break;
                     default:
                         Console.WriteLine("Please choose a valid option");
+                        Console.ReadKey();
                         break;
                 }
             }
 
+        }
+
+        private void AddABadge()
+        {
+            Console.Clear();
+            
+        }
+
+        private void EditABadge()
+        {
+            Console.Clear();
+        }
+
+        private void ListAllBadges()
+        {
+            Console.Clear();
+            Dictionary<int, List<string>> badgeDictionary = _repo.GetBadgeValuePairs();
+
+            foreach(KeyValuePair<int, List<string>> badge in badgeDictionary)
+            {
+                Console.WriteLine(badge);// string format this later
+            }
+        }
+
+        private void DeleteABadge()
+        {
+            Console.Clear();
         }
     }
 }

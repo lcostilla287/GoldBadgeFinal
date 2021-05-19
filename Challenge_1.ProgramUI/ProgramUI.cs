@@ -57,6 +57,7 @@ namespace Challenge_1.ProgramUI
                         break;
                     default:
                         Console.WriteLine("Please select a valid menu option");
+                        Console.ReadKey();
                         break;
                 }
             }
