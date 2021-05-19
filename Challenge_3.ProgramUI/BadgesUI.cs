@@ -142,10 +142,19 @@ namespace Challenge_3.ProgramUI
             Console.WriteLine("Key");
             Console.WriteLine("Badge #     Door Access");
 
-            foreach(KeyValuePair<int, List<string>> badge in badgeDictionary)
+            foreach (KeyValuePair<int, List<string>> badge in badgeDictionary)
             {
-                Console.WriteLine(badge);// string format this later
+                Console.WriteLine(" ");
+                Console.Write($"{badge.Key}\t");
+                foreach(string b in badge.Value)
+                {
+                    Console.Write($"{b}");
+                }
+                    
+                
+                
             }
+            Console.ReadKey();
         }
 
         private void DeleteABadge()
