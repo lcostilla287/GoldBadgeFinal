@@ -10,7 +10,7 @@ namespace Challenge_2.Repository
     public class BadgesRepo
     {
 
-        private readonly Dictionary<int, string[]> _badges = new Dictionary<int, string[]>();
+        private readonly Dictionary<int, List<string>> _badges = new Dictionary<int, List<string>>();
         
         //Create
         public bool AddBadgeToDictionary(Badges newBadge)
@@ -24,15 +24,15 @@ namespace Challenge_2.Repository
         }
 
         //Read
-        public Dictionary<int, string[]> GetBadgeValuePairs()
+        public Dictionary<int, List<string>> GetBadgeValuePairs()
         {
             return _badges;
         }
 
         //I suffered to get this just to let you know. lol
-        public Dictionary<int, string[]> GetBadgeValuePairsByBadgeID (int badgeID)
+        public Dictionary<int, List<string>> GetBadgeValuePairsByBadgeID (int badgeID)
         {
-            foreach (KeyValuePair<int, string[]> badge in _badges)
+            foreach (KeyValuePair<int, List<string>> badge in _badges)
             {
                 if (badge.Key == badgeID)
                 {
@@ -45,7 +45,7 @@ namespace Challenge_2.Repository
         //Update
         public bool AddDoorToBadge(int badgeID, Badges doorToBadge)
         {
-            Dictionary<int, string[]> oldbadge = GetBadgeValuePairsByBadgeID(badgeID);
+            Dictionary<int, List<string>> oldbadge = GetBadgeValuePairsByBadgeID(badgeID);
 
             if (oldbadge != null)
             {
