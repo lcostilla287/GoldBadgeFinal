@@ -10,6 +10,8 @@ namespace Challenge_3.ProgramUI
     {
         static void Main(string[] args)
         {
+            BadgesUI ui = new BadgesUI();
+            ui.Run();
         }
     }
 }
