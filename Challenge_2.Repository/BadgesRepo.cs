@@ -29,7 +29,7 @@ namespace Challenge_2.Repository
             return _badges;
         }
 
-        //I suffered to get this just to let you know. lol
+        
         public Dictionary<int, List<string>> GetBadgeValuePairsByBadgeID (int badgeID)
         {
             foreach (KeyValuePair<int, List<string>> badge in _badges)
@@ -43,13 +43,14 @@ namespace Challenge_2.Repository
         }
 
         //Update
-        public bool AddDoorToBadge(int badgeID, Badges doorToBadge)
+        public bool AddDoorToBadge(int badgeID, string newDoor)
         {
-            Dictionary<int, List<string>> oldbadge = GetBadgeValuePairsByBadgeID(badgeID);
+            
 
-            if (oldbadge != null)
+            if (_badges[badgeID] != null)
             {
-                oldbadge[badgeID] = doorToBadge.DoorNames;
+                _badges[badgeID].Add(newDoor);
+
                 return true;
             }
             else
