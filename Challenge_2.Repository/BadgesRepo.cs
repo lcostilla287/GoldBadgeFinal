@@ -45,12 +45,38 @@ namespace Challenge_2.Repository
         //Update
         public bool AddDoorToBadge(int badgeID, string newDoor)
         {
-            
-
             if (_badges[badgeID] != null)
             {
                 _badges[badgeID].Add(newDoor);
 
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool RemoveDoorFromBadge(int badgeID, string removeDoor)
+        {
+            if (_badges[badgeID] != null)
+            {
+                _badges[badgeID].Remove(removeDoor);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+        //Delete
+
+        public bool RemoveBadge(int badgeID)
+        {
+            if (_badges[badgeID] != null)
+            {
+                _badges.Remove(badgeID);
                 return true;
             }
             else
