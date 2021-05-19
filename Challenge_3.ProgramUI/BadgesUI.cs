@@ -95,19 +95,42 @@ namespace Challenge_3.ProgramUI
         private void EditABadge()
         {
             Console.Clear();
-            Console.WriteLine("What is the number on the badge");
+
+            Console.Write("What is the badge number to update? ");
             int badgeID = Convert.ToInt32(Console.ReadLine());
+
             Dictionary<int, List<string>> badge = _repo.GetBadgeValuePairsByBadgeID(badgeID);
             if (badge != null)
             {
-                Console.Write("List a door that it needs access to: ");
-                Console.ReadLine();
+                Console.WriteLine($"{badge.Keys} has access to {badge.Values}.");
+                Console.WriteLine(" ");
+                Console.WriteLine("What would you like to do?\n" +
+                    "1.Remove a door\n" +
+                    "2. Add a door");
+
+                string input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1":
+                        RemoveADoor(badgeID);
+                        break;
+                    case "2":
+                        AddADoor(badgeID);
+                        break;
+                    default:
+                        Console.WriteLine("Please select a valid option next time.");
+                        Console.ReadKey();
+                        break;
+                }
+
+                Console.WriteLine($"{badge.Keys} has access to {badge.Values}.");
             }
             else
             {
                 Console.WriteLine("Sorry there are no badges by that ID");
+                Console.ReadKey();
             }
-
         }
 
         private void ListAllBadges()
@@ -127,6 +150,57 @@ namespace Challenge_3.ProgramUI
         private void DeleteABadge()
         {
             Console.Clear();
+
+            Console.Write("What is the badge that you would like to delete?");
+            int input = Convert.ToInt32(Console.ReadLine());
+
+            bool wasDeleted = _repo.RemoveBadge(input);
+            if (wasDeleted)
+            {
+                Console.WriteLine("Badge deleted");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Badge could not be deleted");
+                Console.ReadKey();
+            }
+        }
+
+        private void RemoveADoor(int badgeID)
+        {
+            Console.Write("Which door would you like to remove?");
+            string input = Console.ReadLine();
+
+            bool doorWasDeleted = _repo.RemoveDoorFromBadge(badgeID, input);
+            if (doorWasDeleted)
+            {
+                Console.WriteLine("Door removed");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Door Could not be removed");
+                Console.ReadKey();
+            }
+        }
+
+        private void AddADoor(int badgeID)
+        {
+            Console.Write("Which door would you like to add?");
+            string input = Console.ReadLine();
+
+            bool wasAdded = _repo.AddDoorToBadge(badgeID, input);
+            if (wasAdded)
+            {
+                Console.WriteLine("Door added.");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Door could not be added.");
+                Console.ReadKey();
+            }
         }
     }
 }
