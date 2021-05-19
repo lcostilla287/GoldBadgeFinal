@@ -65,19 +65,23 @@ namespace Challenge_3.ProgramUI
         {
             Console.Clear();
             Badges newBadge = new Badges();
+
             Console.Write("What is the number on the badge: ");
             newBadge.BadgeID = Convert.ToInt32(Console.ReadLine());
+
+            newBadge.DoorNames = new List<string>();
 
             bool miniLoop = true;
             while (miniLoop)
             {
                 Console.Write("List a door that it needs access to: ");
-                newBadge.DoorNames.Add(Console.ReadLine());
+                string input = Console.ReadLine();
+                newBadge.DoorNames.Add(input);
 
                 Console.Write("Any other doors(y/n)?");
-                string input = Console.ReadLine();
+                string userInput = Console.ReadLine();
 
-                switch (input)
+                switch (userInput)
                 {
                     case "y":
                         break;
@@ -103,7 +107,8 @@ namespace Challenge_3.ProgramUI
             Dictionary<int, List<string>> badge = _repo.GetBadgeValuePairsByBadgeID(badgeID);
             if (badge != null)
             {
-                Console.WriteLine($"{badge.Keys} has access to {badge.Values}.");
+
+
                 Console.WriteLine(" ");
                 Console.WriteLine("What would you like to do?\n" +
                     "1.Remove a door\n" +
@@ -124,8 +129,6 @@ namespace Challenge_3.ProgramUI
                         Console.ReadKey();
                         break;
                 }
-
-                Console.WriteLine($"{badge.Keys} has access to {badge.Values}.");
             }
             else
             {
@@ -140,22 +143,19 @@ namespace Challenge_3.ProgramUI
             Dictionary<int, List<string>> badgeDictionary = _repo.GetBadgeValuePairs();
 
             Console.WriteLine("Key");
-            Console.WriteLine("Badge #     Door Access");
+            Console.WriteLine("Badge #\t\t Door Access");
 
             foreach (KeyValuePair<int, List<string>> badge in badgeDictionary)
             {
                 Console.WriteLine(" ");
-                Console.Write($"{badge.Key}\t");
+                Console.Write($"{badge.Key}\t\t");
                 foreach(string b in badge.Value)
                 {
-                    Console.Write($"{b}");
+                    Console.Write($" {b}");
                 }
-                    
-                
-                
             }
             Console.ReadKey();
-        }
+        } //
 
         private void DeleteABadge()
         {
