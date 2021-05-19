@@ -14,6 +14,7 @@ namespace Challenge_3.ProgramUI
 
         public void Run()
         {
+            SeedContentDictionary();
             Menu();
         }
 
@@ -201,6 +202,15 @@ namespace Challenge_3.ProgramUI
                 Console.WriteLine("Door could not be added.");
                 Console.ReadKey();
             }
+        }
+
+        private void SeedContentDictionary()
+        {
+            Badges badge1 = new Badges(22345, new List<string> {"A1", "A4", "B1", "B4"});
+            _repo.AddBadgeToDictionary(badge1);
+
+            Badges badge2 = new Badges(32345, new List<string> { "A4", "A5" });
+            _repo.AddBadgeToDictionary(badge2);
         }
     }
 }
