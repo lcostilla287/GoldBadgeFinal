@@ -104,10 +104,17 @@ namespace Challenge_3.ProgramUI
             Console.Write("What is the badge number to update? ");
             int badgeID = Convert.ToInt32(Console.ReadLine());
 
-            Dictionary<int, List<string>> badge = _repo.GetBadgeValuePairsByBadgeID(badgeID);
+            Dictionary<int, List<string>> badge = _repo.GetBadgeValuePairsByBadgeID(badgeID); //
             if (badge != null)
             {
+                Console.WriteLine(" ");
+                Console.Write($"{badgeID} has access to");
+                foreach(string b in badge[badgeID])
+                {
+                    Console.Write($" {b}");
+                }
 
+                Console.ReadKey();
 
                 Console.WriteLine(" ");
                 Console.WriteLine("What would you like to do?\n" +
@@ -129,6 +136,14 @@ namespace Challenge_3.ProgramUI
                         Console.ReadKey();
                         break;
                 }
+
+                Console.WriteLine(" ");
+                Console.Write($"{badgeID} has access to");
+                foreach (string b in badge[badgeID])
+                {
+                    Console.Write($" {b}");
+                }
+                Console.ReadKey();
             }
             else
             {
@@ -155,7 +170,7 @@ namespace Challenge_3.ProgramUI
                 }
             }
             Console.ReadKey();
-        } //
+        } 
 
         private void DeleteABadge()
         {
