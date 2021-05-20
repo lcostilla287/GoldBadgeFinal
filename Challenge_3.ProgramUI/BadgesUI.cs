@@ -1,4 +1,4 @@
-﻿using Challenge_2.Repository; //note this is actually Chalenge_3.Repository
+﻿using Challenge_2.Repository; //note this is actually Challenge_3.Repository
 using Challenge_3.Repository;
 using System;
 using System.Collections.Generic;

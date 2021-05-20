@@ -1,0 +1,16 @@
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Challenge_3.UnitTests.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Challenge_3.UnitTests.pdb
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Challenge_2.Repository.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Challenge_2.Repository.pdb
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\obj\Debug\Challenge_3.UnitTests.csprojAssemblyReference.cache
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\obj\Debug\Challenge_3.UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\obj\Debug\Challenge_3.UnitTests.csproj.CopyComplete
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\obj\Debug\Challenge_3.UnitTests.dll
+C:\Users\luis1\Desktop\GoldBadgeFinal\Challenge_1\Challenge_3.UnitTests\obj\Debug\Challenge_3.UnitTests.pdb
