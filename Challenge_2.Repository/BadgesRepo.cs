@@ -59,7 +59,7 @@ namespace Challenge_2.Repository
 
         public bool RemoveDoorFromBadge(int badgeID, string removeDoor)
         {
-            if (_badges[badgeID] != null)
+            if (_badges[badgeID].Contains(removeDoor))
             {
                 _badges[badgeID].Remove(removeDoor);
                 return true;
@@ -74,7 +74,7 @@ namespace Challenge_2.Repository
 
         public bool RemoveBadge(int badgeID)
         {
-            if (_badges[badgeID] != null)
+            if (_badges.ContainsKey(badgeID))
             {
                 _badges.Remove(badgeID);
                 return true;
