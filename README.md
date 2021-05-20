@@ -25,3 +25,10 @@ After, click on the **Start** button near the top of the visual studio program a
 Thanks for all of the LAs that helped me with this project.
 
 [Stack Overflow](https://stackoverflow.com/), [Microsoft Docs](https://docs.microsoft.com/en-us/?view=net-5.0), and other websites were sources of other information. 
+
+## Please Note:
+Some of the names of the assemblies have been changed or deleted.
+
+- **Challenge_1** has actually been deleted, there is nothing there.
+- **Challenge_1.Repo** has the unit tests, it does not contain the repository.
+- **Challenge_2.Repository** contains the repo for challenge 3, it does not have anything from challenge 2.
