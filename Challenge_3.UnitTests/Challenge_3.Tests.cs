@@ -37,17 +37,17 @@ namespace Challenge_3.UnitTests
             Dictionary<int, List<string>> dictionary = _repo.GetBadgeValuePairs();
 
             bool dictionaryHasKey = dictionary.ContainsKey(_badge.BadgeID);
-            // bool keyHasValue = dictionary;
+            
 
             Assert.IsTrue(dictionaryHasKey);
         }
 
         [TestMethod]
-        public void GetBadgeValuePairsByBadgeID_ShouldReturnCorrectValuePair()
+        public void GetBadgeValuePairsByBadgeID_ShouldNotBeNull()
         {
             Dictionary<int, List<string>> searchResult = _repo.GetBadgeValuePairsByBadgeID(3345);
 
-            
+            Assert.IsNotNull(searchResult);
         }
 
         [TestMethod]
