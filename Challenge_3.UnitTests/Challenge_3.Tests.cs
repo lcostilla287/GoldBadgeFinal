@@ -30,5 +30,46 @@ namespace Challenge_3.UnitTests
             _badge = new Badges(3345, new List<string> {"C3", "B7", "D1"});
             _repo.AddBadgeToDictionary(_badge);
         }
+
+        [TestMethod]
+        public void GetDictionary_ShouldReturnTrue()
+        {
+            Dictionary<int, List<string>> dictionary = _repo.GetBadgeValuePairs();
+
+            bool dictionaryHasKey = dictionary.ContainsKey(_badge.BadgeID);
+            // bool keyHasValue = dictionary;
+
+            Assert.IsTrue(dictionaryHasKey);
+        }
+
+        [TestMethod]
+        public void GetBadgeValuePairsByBadgeID_ShouldReturnCorrectValuePair()
+        {
+            Dictionary<int, List<string>> searchResult = _repo.GetBadgeValuePairsByBadgeID(3345);
+
+            
+        }
+
+        [TestMethod]
+        public void RemoveADoor_ShouldReturnTrue()
+        {
+            bool doorWasRemoved = _repo.RemoveDoorFromBadge(3345, "C3");
+
+            Assert.IsTrue(doorWasRemoved);
+        }
+
+        [TestMethod]
+        public void AddADoor()
+        {
+            bool doorWasAdded = _repo.AddDoorToBadge(3345, "C7");
+            Assert.IsTrue(doorWasAdded);
+        }
+
+        [TestMethod]
+        public void DeleteABadge()
+        {
+            bool badgeWasDeleted = _repo.RemoveBadge(3345);
+            Assert.IsTrue(badgeWasDeleted);
+        }
     }
 }

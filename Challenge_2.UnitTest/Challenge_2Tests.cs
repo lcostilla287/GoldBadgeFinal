@@ -35,8 +35,8 @@ namespace Challenge_2.UnitTest
         {
             Queue <InsuranceClaim> queue = _repo.GetInsuranceClaims();
 
-            bool queueHasClaims = queue.Contains(_claim);
-            Assert.IsTrue(queueHasClaims);
+            bool queueHasClaim = queue.Contains(_claim);
+            Assert.IsTrue(queueHasClaim);
         }
 
         [TestMethod]
