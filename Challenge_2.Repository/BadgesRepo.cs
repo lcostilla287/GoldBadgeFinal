@@ -45,15 +45,16 @@ namespace Challenge_2.Repository
         //Update
         public bool AddDoorToBadge(int badgeID, string newDoor)
         {
-            if (_badges[badgeID] != null)
+            if (_badges[badgeID].Contains(newDoor))
+            {
+                
+                return false;
+            }
+            else
             {
                 _badges[badgeID].Add(newDoor);
 
                 return true;
-            }
-            else
-            {
-                return false;
             }
         }
 
