@@ -58,7 +58,6 @@ namespace Challenge_3.ProgramUI
                         break;
                 }
             }
-
         }
 
         private void AddABadge()

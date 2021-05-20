@@ -18,7 +18,6 @@ namespace Challenge_1.Repo
             Assert.IsTrue(addResult);
         }
 
-
         //fields here
         private MenuItem _item;
         private MenuRepo _repo;
@@ -65,7 +64,5 @@ namespace Challenge_1.Repo
 
             Assert.IsTrue(wasDeleted);
         }
-
-
     }
 }

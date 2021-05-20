@@ -29,7 +29,6 @@ namespace Challenge_2.Repository
             return _badges;
         }
 
-        
         public Dictionary<int, List<string>> GetBadgeValuePairsByBadgeID (int badgeID)
         {
             foreach (KeyValuePair<int, List<string>> badge in _badges)
@@ -72,7 +71,6 @@ namespace Challenge_2.Repository
         }
         
         //Delete
-
         public bool RemoveBadge(int badgeID)
         {
             if (_badges.ContainsKey(badgeID))

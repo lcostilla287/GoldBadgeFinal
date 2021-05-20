@@ -10,7 +10,6 @@ namespace Challenge_1.Repository
     {
         private readonly List<MenuItem> _menuItemsDirectory = new List<MenuItem>();
 
-
         //Create
         //I use a bool here because I want to make sure that the new menu item adds correctly
         public bool AddMenuItemToDirectory(MenuItem newMenuItem)
@@ -22,7 +21,6 @@ namespace Challenge_1.Repository
             bool wasAdded = (_menuItemsDirectory.Count > startingCount) ? true : false;
             return wasAdded;
         }
-
 
         //Read
         //Displays all menu items in the menu item list

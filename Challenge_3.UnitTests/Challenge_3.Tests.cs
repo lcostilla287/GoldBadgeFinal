@@ -38,7 +38,6 @@ namespace Challenge_3.UnitTests
 
             bool dictionaryHasKey = dictionary.ContainsKey(_badge.BadgeID);
             
-
             Assert.IsTrue(dictionaryHasKey);
         }
 

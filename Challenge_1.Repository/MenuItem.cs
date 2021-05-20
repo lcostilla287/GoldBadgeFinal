@@ -23,7 +23,6 @@ namespace Challenge_1.Repository
             Description = description;
             IngredientList = ingredientList;
             MealPrice = mealPrice;
-
         }
     }
 }

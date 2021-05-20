@@ -108,8 +108,7 @@ namespace Challenge_2.ProgramUI
                     Console.ReadKey();
                     TakeCareOfNextClaim();
                     break;
-            }
-            
+            }         
         }
 
         private void EnterANewClaim()
